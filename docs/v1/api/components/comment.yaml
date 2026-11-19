@@ -1,0 +1,41 @@
+create:
+  request:
+    type: object
+    properties:
+      body:
+        type: string
+        description: The body of the comment.
+  response:
+    type: object
+    properties:
+      _id:
+        type: integer
+        description: The unique identifier of the comment.
+      body:
+        type: string
+        description: The body of the comment.
+
+list:
+  response:
+    type: array
+    items:
+      type: object
+      properties:
+        _id:
+          type: integer
+          description: The unique identifier of the comment.
+        createdBy:
+          type: object
+          properties:
+            _id:
+              type: integer
+              description: The unique identifier of the user.
+            username:
+              type: string
+              description: The username of the user.
+            email:
+              type: string
+              description: The email of the user.
+        body:
+          type: string
+          description: The body of the comment.
